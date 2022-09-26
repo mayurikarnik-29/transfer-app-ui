@@ -15,15 +15,15 @@ export class TransactionService {
   }
 
   addTransaction(body: any) {
-    return this.http.post(this.rootURL + '/transactions', { body });
+    return this.http.post(this.rootURL + '/transactions', body);
   }
 
   editTransaction(transactionId: any, body: any) {
-    return this.http.put(`${this.rootURL}/task/${transactionId}`, { body });
+    return this.http.put(`${this.rootURL}/transactions/${transactionId}`, body);
   }
 
   deleteTransaction(transactionId: any) {
-    console.log('deleting task:::', transactionId);
-    return this.http.delete(`${this.rootURL}/task/${transactionId}`);
+    console.log('deleting Transaction:::', transactionId);
+    return this.http.delete(`${this.rootURL}/transactions/${transactionId}`);
   }
 }
