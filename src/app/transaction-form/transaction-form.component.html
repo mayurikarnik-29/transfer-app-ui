@@ -1,0 +1,49 @@
+<h1 mat-dialog-title>{{data ? 'Edit' : 'Add'}} Transaction</h1>
+<div mat-dialog-content>
+  <form [formGroup]="transactionFormGroup" class="transaction-form">
+    <input type="hidden" formControlName="id">
+
+    <mat-form-field class="formfield-full-width" appearance="fill">
+      <mat-label>Account Holder</mat-label>
+      <input matInput placeholder="Account Holder" required formControlName="account_holder">
+      <mat-error>
+        <app-error-messages [ctrl]="transactionFormGroup.get('account_holder')"></app-error-messages>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="formfield-full-width">
+      <mat-label>Date</mat-label>
+      <input matInput [matDatepicker]="picker" required formControlName="date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error>
+        <app-error-messages [ctrl]="transactionFormGroup.get('date')"></app-error-messages>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="formfield-full-width" appearance="fill">
+      <mat-label>IBAN</mat-label>
+      <input matInput placeholder="IBAN" required formControlName="IBAN">
+      <mat-error>
+        <app-error-messages [ctrl]="transactionFormGroup.get('IBAN')"></app-error-messages>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="formfield-full-width" appearance="fill">
+      <mat-label>Amount</mat-label>
+      <input matInput placeholder="Amount" required minlength="2" maxlength="8" formControlName="amount">
+      <mat-error>
+        <app-error-messages [ctrl]="transactionFormGroup.get('amount')"></app-error-messages>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="formfield-full-width" appearance="fill">
+      <mat-label>Note</mat-label>
+      <textarea matInput placeholder="Note for the transaction" formControlName="note"></textarea>
+    </mat-form-field>
+  </form>
+</div>
+<mat-dialog-actions>
+  <button mat-flat-button color="primary" [disabled]="!transactionFormGroup.valid" (click)="close(true)">Save</button>
+  <button mat-flat-button color="warn" (click)="close(false)">Cancel</button>
+</mat-dialog-actions>

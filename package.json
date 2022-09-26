@@ -1,7 +1,7 @@
 {
   "name": "transfer-app-ui",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "Mayuri",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
@@ -16,6 +16,7 @@
     "@angular/common": "^14.0.0",
     "@angular/core": "^14.0.0",
     "@angular/forms": "^14.0.0",
+    "@angular/material-moment-adapter": "^14.2.2",
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
@@ -26,7 +27,9 @@
     "@capacitor/status-bar": "4.0.1",
     "@ionic/angular": "^6.1.9",
     "@ngrx/effects": "^14.3.1",
+    "angular-iban": "^14.0.0",
     "ionicons": "^6.0.3",
+    "moment": "^2.29.4",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"

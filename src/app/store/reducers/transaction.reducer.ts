@@ -35,7 +35,7 @@ const transactionReducer = createReducer(
     on(transactionAction.createTransactionSuccess, (state, result) => {
         const transaction = undefined !== state.transaction ? _.cloneDeep(state.transaction) : [];
         const currentTransaction = undefined !== state.currentTransaction ? _.cloneDeep(state.currentTransaction) : {};
-        currentTransaction.id = result.transactionId;
+        currentTransaction.id = result.id;
         transaction.push(currentTransaction);
         return {
             transaction,
